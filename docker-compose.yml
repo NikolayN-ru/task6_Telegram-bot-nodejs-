@@ -1,0 +1,24 @@
+version: '3.8'
+services:
+  postgres11:
+    # hostname: postgres_db_3
+    image: postgres:11
+    container_name: postgres11_4
+    restart: unless-stopped
+    volumes:
+      - ./postgres_db2:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=password
+    networks:
+      - lb-docker-network
+
+      
+# networks:
+  # backend:
+    # driver: custom-driver-2
+networks:
+  lb-docker-network:
+    driver: bridge
