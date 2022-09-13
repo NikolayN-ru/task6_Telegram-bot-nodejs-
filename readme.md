@@ -1,3 +1,5 @@
+имя бота - telebot-atk
+#
 Телеграм бот -  написан на Nodejs - библиотекa: node-telegram-bot-api
 для хранения данных используется бд - Postgresql
 #
