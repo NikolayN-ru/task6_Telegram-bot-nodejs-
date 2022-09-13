@@ -53,7 +53,6 @@ bot.on('message', async (msg) => {
     if (msg.text === 'Погода в Канаде') {
 
         const weather = await axios.get('https://api.openweathermap.org/data/2.5/weather?id=498817&units=metric&appid=db7c082d05dbf48a5e5946e1386f4b3e&lang=ru')
-        console.log(weather.data);
         bot.sendMessage(id, `в Канаде средняя температура ${Math.round(weather.data.main.temp)} градусов по целсию, ветер ${weather.data.wind.speed} м/с`);
     }
     if (msg.text === 'Хочу почитать!') {
@@ -114,6 +113,7 @@ bot.on('message', async (msg) => {
             allUsers.forEach(item => {
                 bot.sendMessage(item.chat, `Ваше персональное сообщение для чата ${item.chat}: ${msg.text}`);
             })
+            bot.sendMessage(msg.chat.id, 'рассылка сообщений успешно завершена')
         })
 
     }

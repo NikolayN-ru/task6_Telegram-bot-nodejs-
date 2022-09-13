@@ -15,10 +15,14 @@ services:
     networks:
       - lb-docker-network
 
+  # bottelegram:
+  #   image: ./
+  #   container_name: telebot-atk
+  #   command: node bot2.js 
+  #   restart: restart
+  #   depends_on:
+  #     - postgres11
       
-# networks:
-  # backend:
-    # driver: custom-driver-2
 networks:
   lb-docker-network:
     driver: bridge
